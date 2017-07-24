@@ -32,6 +32,8 @@ class Route
      *
      * @var array
      */
+    public $base_dir;
+
     protected $method = [];
 
     protected $path = [];
@@ -51,6 +53,7 @@ class Route
     public function __construct($base_dir = './' , $namespace = null )
     {
         $this->namespace = $namespace;
+        $this->base_dir = rtrim($base_dir,'/').'/';
         $this->route_factory = new RouteFactory();
         $this->request_url = strlen($_SERVER['REQUEST_URI']) > 2?rtrim($_SERVER['REQUEST_URI'],'/'):$_SERVER['REQUEST_URI'];
         $this->request_method = strtolower($_SERVER['REQUEST_METHOD']);
@@ -122,7 +125,7 @@ class Route
 
     public function __autoload($class_name)
     {
-        require_once './'.$class_name.'.php';
+        require_once $this->base_dir.$class_name.'.php';
     }
 
 }
