@@ -3,6 +3,7 @@
     "description": "A fast & flexible router for PHP",
     "keywords": ["router", "routing", "panda", "bamboo"],
     "homepage": "https://github.com/pandasir/route",
+	"license": "MIT",
     "authors": [
       {
         "name": "panda",
