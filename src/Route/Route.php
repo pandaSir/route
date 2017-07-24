@@ -72,7 +72,6 @@ class Route
 
     public function setPath($path)
     {
-//        var_dump($this->request_url,strlen($path));die;
         if( strlen($path) > 2 ){
             $path = rtrim($path,'/');
         }
@@ -121,7 +120,6 @@ class Route
 
     public function __autoload($class_name)
     {
-//        var_dump($this->namespace.$class_name.'.php');
         require_once './'.$class_name.'.php';
     }
 
