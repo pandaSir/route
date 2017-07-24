@@ -48,7 +48,7 @@ class Route
 
     public $request_method;
 
-    public function __construct( $namespace = null )
+    public function __construct($base_dir = './' , $namespace = null )
     {
         $this->namespace = $namespace;
         $this->route_factory = new RouteFactory();
@@ -104,10 +104,12 @@ class Route
                     $action = $this->action[$this->request_url];
                     $action();
                 }else{
-                    $class = str_replace('/','\\',$this->namespace.$this->class[$this->request_url]);
+                    $class = str_replace('\\','/',$this->namespace.$this->class[$this->request_url]);
                     $action = $this->action[$this->request_url];
                     $this->__autoload($class);
-                    return ( new $class() )->$action();
+
+                    $class = str_replace('/','\\',$this->namespace.$this->class[$this->request_url]);
+                    ( new $class() )->$action();
                 }
             }else{
                 trigger_error('not found method '.$this->request_method.' in this server',E_USER_WARNING);

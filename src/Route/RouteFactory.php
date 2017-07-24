@@ -23,9 +23,10 @@ class RouteFactory extends AbstractRouteFactory
         return !$path?self::PATH_VALUE:$path;
     }
 
-    public function build( $namespace = null )
+    public function build($base_dir = './' , $namespace = null )
     {
         $this->namespace = $namespace;
+        $this->base_dir = $base_dir;
         return $this;
     }
 }

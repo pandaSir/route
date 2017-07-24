@@ -17,7 +17,9 @@ abstract class AbstractRouteFactory
 {
     protected $namespace;
 
-    public function __construct($namespace = null)
+    protected $base_dir;
+
+    public function __construct($base_dir = './', $namespace = null)
     {
         $this->namespace = $namespace;
     }
