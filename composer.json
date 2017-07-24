@@ -1,0 +1,20 @@
+{
+	"name": "pandasir/route",
+    "description": "A fast & flexible router for PHP",
+    "keywords": ["router", "routing", "panda", "bamboo"],
+    "homepage": "https://github.com/pandasir/route",
+    "authors": [
+      {
+        "name": "panda",
+        "email": "18770813304@163.com"
+      }
+    ],
+    "require": {
+      "php": ">=5.4.0"
+    },
+    "autoload": {
+      "psr-4":{
+          "Route\\": "src/Route/"
+      }
+    }
+}
