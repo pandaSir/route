@@ -1,7 +1,7 @@
 {
 	"name": "pandasir/route",
     "description": "A fast & flexible router for PHP",
-    "keywords": ["router", "routing", "panda", "bamboo"],
+    "keywords": ["router", "routing", "panda", "pandasir"],
     "homepage": "https://github.com/pandasir/route",
 	"license": "MIT",
     "authors": [
